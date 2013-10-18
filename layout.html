@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+
+	<title>Home </title>
+
+	<style type="text/css">
+
+	body {
+		font: 1em Arial, Helvetica, sans-serif;
+	}
+	a {
+		color: #669;
+		text-decoration: none;
+	}
+	a:hover {
+		text-decoration: underline;
+	}
+	h1 {
+		font: bold 3em Arial, Helvetica, sans-serif;
+	}
+	/*Estrutura */
+	#conteiner {
+		padding: 5px;
+		width: 960px;
+		margin: 20px auto;
+	}
+	#header {
+		height: 80px;
+		background: white;
+	}
+
+	#header img{
+		margin: 1% 1% 1% 1%;
+		position: absolute;
+	}
+
+	.menuh {
+		width: 58%;
+		float: right;
+		height: 70%;
+	}
+	.menuh li{
+		display: inline;
+		padding: 0px;
+		list-style: none;
+		font-size: 0.9em;
+		font-family: arial;
+		margin-top: 1%;
+	}
+
+	.menuh ul{
+		border-radius: 20px;
+		padding-top: 4%; 
+		position: relative;
+		background: black;
+		margin-right: 1%;
+		height: 100%;
+		background-image: linear-gradient(black, #2F4F4F); 
+	}
+
+	#content {
+		width: 640px;
+		float: left;
+	}
+	#sidebar {
+		width: 300px;
+		float: right;
+		padding-left: 5px;
+		
+	}
+	#footer {
+		clear: both;
+	}
+
+	/* bordas */
+	#content {
+		background: #f8f8f8;
+	}
+	#sidebar {
+		background: #f0efef;
+	}
+
+	#sidebar ul{
+		list-style: none;
+	}
+	#header, #content, #sidebar {
+		margin-bottom: 5px;
+	}
+	#conteiner, #header, #content, #sidebar, #footer {
+		border: solid 1px #ccc;
+	}
+	img{
+		max-width: 100%;
+	}
+
+	</style>
+</head>
+
+<body>
+
+	<div id="conteiner">
+
+		<div id="header">
+			<div class="menuh">
+				<ul>
+					<li><a href="listas.html">Listas</a></li>
+						<li><a href="listas_encadeadas.html">Listas encadeadas</a></li>
+						<li><a href="arquivo1.html">Arquivo 1</a></li>
+						<li><a href="tabelas.html">Tabelas</a></li>
+						<li><a href="video_audio.html">Video/Audio</a></li>
+						<li><a href="formularios.html">Formulários</a></li>
+						<li><a href="css.html">CSS</a></li>
+				</ul>
+			</div>
+			<img src="imagens/utfpr_logo.png" alt="Logo da UTFPR">
+		</div>
+
+		<div id="content">
+			<h2>Conteúdo</h2>
+			<p>text</p>
+			<p>text</p>
+			<p>text</p>
+			<p>text</p>
+			<p>text</p>
+			<p>text</p>
+			<p>text</p>
+			<p>text</p>
+		</div>
+
+		<div id="sidebar">
+			<h3>Menu Lateral</h3>
+			<ul>
+				<li><a href="listas.html" target="principal">Listas</a></li>
+					<li><a href="listas_encadeadas.html" target="principal">Listas encadeadas</a></li>
+					<li><a href="arquivo1.html" target="principal">Arquivo 1</a></li>
+					<li><a href="tabelas.html" target="principal">Tabelas</a></li>
+					<li><a href="video_audio.html" target="principal">Video/Audio</a></li>
+					<li><a href="formularios.html" target="principal">Formulários</a></li>
+					<li><a href="css.html" target="principal">CSS</a></li>
+			</ul>
+		</div>
+
+		<div id="footer">
+			<h4>Rodapé</h4>
+		</div>
+
+	</div>
+
+</body>
+</html>
