@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+<head>
+	<title>Atividades Javascript</title>
+	<style src="../css/bootstrap.css"></style>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		function tabuada(){
+			opcoes = document.getElementsByName('tipo_tab');
+			for(i=0;i<3;i++)
+				if(opcoes[i].checked)
+					opcao=opcoes[i].value;
+			switch (opcao){
+				case '+':
+					break;
+				case '-':
+					break;
+				case '/':
+					break;
+			}
+		}
+
+		function criaBotao(){
+			var string;
+			string = '<br><button>Botão1</button> <button>Botão2</button>';
+			document.write(string);
+			setTimeout(function(){alert("Hello")},2000);
+		}
+
+		function criaBotaoPorQtd(){
+			qtd = document.getElementById('qtd_Botoes').value;
+			string = '';
+			for(i=0;i<qtd;i++)
+				string += '<br><button>Botão ' + i + '</button>';
+			document.write(string);
+		}
+
+		function aposentadoria(){
+			nome_emp = document.getElementById('nome_emp').value;
+			ano_nasc = document.getElementById('ano_nasc').value;
+			ano_adm = document.getElementById('ano_adm').value;
+			sexos = document.getElementsByName('sexo_emp');
+			idade = 2013 - ano_nasc;
+			tempo_trab = 2013 - ano_adm;
+			for(i=0;i<2;i++)
+				if(sexos[i].checked)
+					sexo = sexos[i].value;
+			if(sexo == 'm'){
+				if(idade>=65 || tempo_trab>=30 || (idade>=60 && tempo_trab>=25))
+					flag=true;
+				else
+					flag=false;
+			}
+			else{
+				if(idade>=60 || tempo_trab>=25 || (idade>=55 && tempo_trab>=20))
+					flag=true;
+				else
+					flag=false;
+			}
+			if(flag)
+				alert(nome_emp + ', você já pode se aposentar!');
+			else
+				alert(nome_emp + ', você não pode se aposentar!');
+		}
+
+		function comprar(){
+			total = 0;
+			laranjas = document.getElementById('laranjas').value;
+			macas = document.getElementById('macas').value;
+			if(macas<=12)
+				total_macas = macas*1.30;
+			else{
+				preco = prompt("Digite um preço para a unidade de maçãs:");
+				total_macas = macas*preco;
+			}
+
+			if(laranjas<=20)
+				total_laranjas = laranjas*0.80;
+			else{
+				preco = prompt("Digite um preço para a unidade de laranjas:");
+				total_laranjas = laranjas*preco;
+			}
+			total = (total_macas+total_laranjas);
+			document.write('Maçãs: R$' + total_macas + '<br>Laranjas: R$' + total_laranjas + '<br>Total: R$' + total);
+
+		}
+
+		function verificarAprovacao(){
+			nota1 = Number(document.getElementById('nota1').value);
+			nota2 = Number(document.getElementById('nota2').value);
+			frequencia = document.getElementById('frequencia').value;
+			media = Number(nota1+nota2)/2;
+			document.write('Média: ' + media + '<br>Frequência: ' + frequencia + '%<br>');
+			if(media>=6 && frequencia>=75)
+				document.write('Aprovado.');
+			else
+				document.write('Reprovado.');
+		}
+	</script>
+</head>
+<body>
+	Exercício 1 - Tabuada - (Ainda a fazer)<br>
+	<input type="text" size="50" id="tab" placeholder="Digite o número para o cálculo da tabuada">
+	<input type="radio" name="tipo_tab" value="+">Usando + &nbsp&nbsp
+	<input type="radio" name="tipo_tab" value="-">Usando - &nbsp&nbsp
+	<input type="radio" name="tipo_tab" value="/">Usando /
+	<button type="submit" onclick="tabuada()">Calcular</button><br><br>
+
+	Exercício 2 - Criação de botões<br>
+	<button onclick="criaBotao();">Botão 1</button>
+	<button>Botão 2</button><br><br>
+
+	Exercício 3 - Criação de botões por quantidade<br>
+	<input type="text" id="qtd_Botoes" placeholder="Número de botões">
+	<button onclick="criaBotaoPorQtd();">Clique para criar os botões</button><br><br>
+
+	Exercício 4 - Verificação de aposentadoria<br>
+	<input type="text" id="nome_emp" placeholder="Nome"><br>
+	<input type="text" id="ano_nasc" placeholder="Ano de nascimento"><br>
+	<input type="text" id="ano_adm" placeholder="Ano de admissão"><br>
+	<input type="radio" name="sexo_emp" value="m"> Masculino
+	<input type="radio" name="sexo_emp" value="f"> Feminino<br>
+	<button type="submit" onclick="aposentadoria()">Validar aposentado</button><br><br>
+
+	Exercício 5 - Laranjas e maçãs<br>
+	<input id="laranjas" type="text" size="30" placeholder="Digite o número de laranjas"><br>
+	<input id="macas" type="text" size="30" placeholder="Digite o número de maçãs"><br>
+	<button type="submit" onclick="comprar()">Comprar</button>
+
+	<br><br>Exercício 6 - Aprovação e reprovação<br>
+	<input type="text" id="nota1" placeholder="1ª Nota"><br>
+	<input type="text" id="nota2" placeholder="2ª Nota"><br>
+	<input type="text" id="frequencia" placeholder="Frequencia"><br>
+	<button type="submit" onclick="verificarAprovacao()">Verificar Aprovação</button>
+</body>
+</html>
