@@ -16,10 +16,19 @@
 			var nome = quebra[1];
 			alert('Seu nome é: ' + nome);
 		}
+
+		function setarCookiePorTempo(){
+			var cookie = 'nome: ' + prompt('Digite seu nome: ');
+			var dataExpirar= new Date();
+			dataExpirar.setDate(exdate.getDate() + 2);
+			document.cookie = cookie + ";expires=" + dataExpirar.toGMTString();
+			alert('cookie registrado!');
+		}
 	</script>
 </head>
 <body>
 	<input type="button" onclick="setarCookie();" value="Setar Cookies"><br>
+	<input type="button" onclick="setarCookiePorTempo();" value="Setar cookie por tempo"><br>
 	<input type="button" onclick="lerCookie();" value="Ler Cookies">
 </body>
 </html>
