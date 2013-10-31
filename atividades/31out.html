@@ -18,7 +18,8 @@
 		}
 
 		function setarCookiePorTempo(){
-			var cookie = 'nome: ' + prompt('Digite seu nome: ');
+			var nome = prompt('Digite seu nome: ');
+			var cookie = 'nome: ' + nome;
 			var dataExpirar= new Date();
 			dataExpirar.setDate(exdate.getDate() + 2);
 			document.cookie = cookie + ";expires=" + dataExpirar.toGMTString();
