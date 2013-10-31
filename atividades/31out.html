@@ -25,11 +25,35 @@
 			document.cookie = cookie + ";expires=" + dataExpirar.toGMTString();
 			alert('cookie registrado!');
 		}
+
+		function ler2Cookies(){
+			var cookie = document.cookie;
+			var separa = cookie.split(',');
+			for(i=0;i<strlen(separa);i++)
+				cookie[i] = separa.split(':');
+			for(i=0;i<strlen(cookie);i++){
+				var chave = cookie[i][0];
+				var value = cookie[i][1];
+				exibe_cookie += chave + ':' + value + ' ';
+			}
+			alert(exibe_cookie);
+		}
+
+		function setar2Cookies(){
+			var nome = prompt('Digite seu nome: ');
+			var idade = prompt('Digite sua idade: ');
+			//var cookie = 'nome: ' + nome + ', idade: ' + idade;
+			document.cookie = nome;
+			document.cookie = idade;
+			alert('cookies registrados!');
+			ler2Cookies();
+		}
 	</script>
 </head>
 <body>
 	<input type="button" onclick="setarCookie();" value="Setar Cookies"><br>
 	<input type="button" onclick="setarCookiePorTempo();" value="Setar cookie por tempo"><br>
+	<input type="button" onclick="setar2Cookies();" value="Setar 2 cookies"><br>
 	<input type="button" onclick="lerCookie();" value="Ler Cookies">
 </body>
 </html>
