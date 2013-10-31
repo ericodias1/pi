@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>Atividades dia 31 de outubro</title>
+	<script type="text/javascript">
+		function setarCookie(){
+			var nome = prompt("Qual é o seu nome?");
+			var cookie = 'nome: ' + nome;
+			document.cookie=cookie;
+		}
+
+		function lercookie(){
+			var cookie = document.cookie;
+			var quebra = cookie.split(':');
+			var nome = quebra[1];
+			alert('Seu nome é: ' + nome);
+		}
+	</script>
+</head>
+<body>
+	<input type="button" onclick="setarCookie();" value="Setar Cookies"><br>
+	<input type="button" onclick="lerCookie();" value="Ler Cookies">
+</body>
+</html>
