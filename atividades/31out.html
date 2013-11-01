@@ -31,7 +31,7 @@
 			var separa = cookie.split(',');
 			for(i=0;i<strlen(separa);i++)
 				cookie[i] = separa.split(':');
-			for(i=0;i<strlen(cookie);i++){
+			for(i=0;i<cookie.length;i++){
 				var chave = cookie[i][0];
 				var value = cookie[i][1];
 				exibe_cookie += chave + ':' + value + ' ';
