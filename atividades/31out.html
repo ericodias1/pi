@@ -29,7 +29,7 @@
 		function ler2Cookies(){
 			var cookie = document.cookie;
 			var separa = cookie.split(',');
-			for(i=0;i<strlen(separa);i++)
+			for(i=0;i<cookie.length;i++)
 				cookie[i] = separa.split(':');
 			for(i=0;i<cookie.length;i++){
 				var chave = cookie[i][0];
