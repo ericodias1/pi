@@ -30,7 +30,7 @@
 			var cookie = document.cookie;
 			var exibe_cookie = '';
 			var separa = cookie.split(',');
-			for(i=0;i<cookie.length;i++)
+			for(i=0;i<separa.length;i++)
 				cookie[i] = separa.split(':');
 			for(i=0;i<cookie.length;i++){
 				var chave = cookie[i][0];
