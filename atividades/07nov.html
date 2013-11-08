@@ -4,15 +4,17 @@
 		<meta charset="utf-8">
 		<title>07 de novembro - atividades javascript</title>
 		<script type="text/javascript">
-			if(!localStorage.cont)
-				localStorage.cont=0;
-			else{
-				localStorage.cont=parseInt(localStorage.cont)+1;
-				var visitas = localStorage.getItem('cont');
-				document.write('Contador de visitas<br><input type="text" value="' + visitas + '">');
+			function pagina(){
+				if(!localStorage.cont)
+					localStorage.cont=0;
+				else{
+					localStorage.cont=parseInt(localStorage.cont)+1;
+					var visitas = localStorage.getItem('cont');
+					document.write('Contador de visitas<br><input type="text" value="' + visitas + '">');
+				}
 			}
 		</script>
 	</head>
-	<body>
+	<body onload="pagina()">
 	</body>
 </html>
