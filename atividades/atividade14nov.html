@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+		<title> Atividade Onibus </title>
+		<script type="text/javascript">
+			function escolhePoltrona(numero, nome){
+				if(!nome)
+					nome = prompt('Por favor digite o nome para comprar sua passagem:');
+				document.getElementById(numero).src = 'img/ocupada.png';
+				document.getElementById(numero).title = nome;
+				document.getElementById(numero).onclick = '';
+				
+				localStorage.setItem(numero, nome);
+			}
+			
+			function setaPoltronas(){
+				var i;
+				for(i=1;i<=4;i++){
+					if(localStorage.getItem(i)){
+						var nome = localStorage.getItem(i);
+						escolhePoltrona(i, nome);
+					}
+				}
+			}
+		</script>
+	</head>
+	<body onload="setaPoltronas()">
+		<img id="1" src="img/livre.png" onclick="escolhePoltrona('1')" style="width: 50px;">
+		<img id="2" src="img/livre.png" onclick="escolhePoltrona('2')" style="width: 50px;"><br>
+		<img id="3" src="img/livre.png" onclick="escolhePoltrona('3')" style="width: 50px;">
+		<img id="4" src="img/livre.png" onclick="escolhePoltrona('4')" style="width: 50px;">
+	</body>
+</html>
