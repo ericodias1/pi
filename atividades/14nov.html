@@ -5,6 +5,7 @@
 	<title> WebWorkers </title>
 	<script type="text/javascript">
 		var worker = new Worker('task.js');
+		worker.postMessage();
 		worker.addEventListener('message', function(e){
 			alert('Worker said: ', e.data);
 		}, false);
