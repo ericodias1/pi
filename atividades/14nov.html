@@ -7,7 +7,7 @@
 		var worker = new Worker('task.js');
 		worker.postMessage();
 		worker.addEventListener('message', function(e){
-			alert('Worker said: ', e.data);
+			alert('Worker said: ' + e.data);
 		}, false);
 		worker.postMessage('Hello World');
 	</script>
